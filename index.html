@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -308,7 +308,7 @@
     }
   </style>
 </head>
-<body class="lang-en">
+<body class="lang-hr">
 
   <!-- Language toggle -->
   <div class="lang-toggle" role="navigation" aria-label="Language">
@@ -389,13 +389,13 @@
         </h2>
 
         <div data-lang="en">
-          <p>We've created <strong>Budo Notebook</strong> — a free, open-source template vault for <a href="https://obsidian.md" target="_blank" rel="noopener" style="color:var(--accent);">Obsidian</a>, a free offline note-taking app that works with plain files.</p>
+          <p>I've created <strong>Budo Notebook</strong> — a free, open-source template vault for <a href="https://obsidian.md" target="_blank" rel="noopener" style="color:var(--accent);">Obsidian</a>, a free offline note-taking app that works with plain files.</p>
           <p>Download it, open it, and make it yours. Adjust the exam programme to match your dojo. Add your language. Log your training. Record your sensei's corrections. Build your own technique library with video links.</p>
           <p>No account. No server. No one-size-fits-all. Just your practice, your way.</p>
         </div>
 
         <div data-lang="hr">
-          <p>Stvorili smo <strong>Budo Notebook</strong> — besplatni, open-source predložak vaulta za <a href="https://obsidian.md" target="_blank" rel="noopener" style="color:var(--accent);">Obsidian</a>, besplatnu offline aplikaciju za bilješke koja radi s običnim datotekama.</p>
+          <p>Stvorio sam <strong>Budo Notebook</strong> — besplatni, open-source predložak vaulta za <a href="https://obsidian.md" target="_blank" rel="noopener" style="color:var(--accent);">Obsidian</a>, besplatnu offline aplikaciju za bilješke koja radi s običnim datotekama.</p>
           <p>Preuzmi ga, otvori i prilagodi sebi. Izmijeni ispitni program prema svom dojou. Dodaj vlastiti jezik. Bilježi treninge. Zapisuj ispravke svog senseija. Gradi vlastitu knjižnicu tehnika s video linkovima.</p>
           <p>Bez računa. Bez servera. Bez kompromisa. Samo tvoja praksa, na tvoj način.</p>
         </div>
@@ -441,11 +441,19 @@
   </main>
 
   <footer>
-    <span data-lang="en">Budo Notebook &nbsp;·&nbsp; 2026</span>
-    <span data-lang="hr">Budo Notebook &nbsp;·&nbsp; 2026</span>
+    <span data-lang="en">Budo Notebook &nbsp;·&nbsp; <span id="year-en"></span></span>
+    <span data-lang="hr">Budo Notebook &nbsp;·&nbsp; <span id="year-hr"></span></span>
   </footer>
 
   <script>
+    // Set current year in footer
+    document.addEventListener('DOMContentLoaded', function() {
+      var year = new Date().getFullYear();
+      var en = document.getElementById('year-en');
+      var hr = document.getElementById('year-hr');
+      if (en) en.textContent = year;
+      if (hr) hr.textContent = year;
+    });
     // ── Language toggle ──
     function setLang(lang) {
       document.body.className = 'lang-' + lang;
